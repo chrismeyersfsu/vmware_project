@@ -12,3 +12,4 @@
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
         guest_name: "{{ vm_name }}"
+      with_items: "{{ range(1, iterations) | list }}"
