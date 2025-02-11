@@ -1,0 +1,14 @@
+---
+- name: create vm from a template
+  hosts: localhost
+  become: false
+  gather_facts: false
+  tasks:
+
+    - name: Gather guest info
+      vmware.vmware.guest_info:
+        validate_certs: false
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        guest_name: "{{ vm_name }}"
